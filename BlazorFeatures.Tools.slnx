@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="BlazorFeatures.Tools.Abstractions/BlazorFeatures.Tools.Abstractions.csproj" />
+  <Project Path="BlazorFeatures.Tools.Server/BlazorFeatures.Tools.Server.csproj" />
+  <Project Path="BlazorFeatures.Tools.Tests/BlazorFeatures.Tools.Tests.csproj" />
+  <Project Path="BlazorFeatures.Tools/BlazorFeatures.Tools.Client.csproj" />
+</Solution>
