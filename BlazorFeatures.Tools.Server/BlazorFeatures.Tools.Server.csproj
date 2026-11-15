@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <PackageId>BlazorFeatures.Tools.Server</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>Federico Mangini</Authors>
     <Description>Server routing, authorization and SignalR transport for BlazorFeatures events.</Description>
     <TargetFramework>net10.0</TargetFramework>
@@ -18,6 +18,7 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <EnablePackageValidation>true</EnablePackageValidation>
     <PackageTags>blazor;signalr;events;webassembly;interactive-server</PackageTags>
+    <PackageReleaseNotes>Fix SignalR Hub method binding for Join, Leave, and Publish.</PackageReleaseNotes>
   </PropertyGroup>
 
 

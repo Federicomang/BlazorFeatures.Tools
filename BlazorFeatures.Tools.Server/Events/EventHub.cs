@@ -15,10 +15,9 @@ public abstract class EventHub<TChannel>(
 {
     private const string JoinedScopesKey = "BlazorFeatures.Tools.JoinedScopes";
 
-    public async Task Join(
-        EventChannelScope scope,
-        CancellationToken cancellationToken = default)
+    public async Task Join(EventChannelScope scope)
     {
+        var cancellationToken = Context.ConnectionAborted;
         ValidateScope(scope);
         var authorization = await channel.AuthorizeJoinAsync(
             CreateAuthorizationContext(EventOperation.Join, scope),
@@ -40,10 +39,9 @@ public abstract class EventHub<TChannel>(
         joinedScopes.Add(scope);
     }
 
-    public async Task Leave(
-        EventChannelScope scope,
-        CancellationToken cancellationToken = default)
+    public async Task Leave(EventChannelScope scope)
     {
+        var cancellationToken = Context.ConnectionAborted;
         ValidateScope(scope);
         if (!GetJoinedScopes().Remove(scope))
             return;
@@ -54,10 +52,9 @@ public abstract class EventHub<TChannel>(
             cancellationToken);
     }
 
-    public Task<FeatureResponse<EventResponse>> Publish(
-        EventPublishRequest request,
-        CancellationToken cancellationToken = default)
+    public Task<FeatureResponse<EventResponse>> Publish(EventPublishRequest request)
     {
+        var cancellationToken = Context.ConnectionAborted;
         ArgumentNullException.ThrowIfNull(request);
         return coordinator.PublishAsync<TChannel>(
             request,
